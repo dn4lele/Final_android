@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity {
         binding.searchBarMovies.setText(lastsearch);
 
         String search = binding.searchBarMovies.getText().toString();
-        fatchMovies(search);
+        fetchMovies(search);
         binding.searchMovieBtn.setOnClickListener(onClickListener);
 
         binding.changecollums.setOnClickListener(v -> {
@@ -86,10 +86,10 @@ public class SearchActivity extends AppCompatActivity {
     }
     View.OnClickListener onClickListener = v->{
         String search = binding.searchBarMovies.getText().toString();
-         fatchMovies(search);
+        fetchMovies(search);
     } ;
 
-    public void fatchMovies(String search){
+    public void fetchMovies(String search){
         binding.progressBar.setVisibility(View.VISIBLE);
         binding.searchMovieBtn.setVisibility(View.GONE);
         Retrofit retrofit = MoviesAPIClient.getClient();
@@ -132,7 +132,7 @@ public class SearchActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        fatchMovies( search);
+                        fetchMovies( search);
                     }
                 }, 1000);
             }
