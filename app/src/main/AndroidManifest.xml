@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Final_android"
         tools:targetApi="31">
         <activity
-            android:name=".Screens.FavoritesActivity"
+            android:name=".Screens.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".Screens.DetailActivity"

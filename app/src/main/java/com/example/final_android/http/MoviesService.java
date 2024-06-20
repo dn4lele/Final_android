@@ -33,4 +33,12 @@ public interface MoviesService {
         @Path("slug") String slug
     );
 
+
+    @GET("movies")
+    public Call<Root> getMoviesByName(
+            @Query("q") String q,
+            @Query("page") Integer page
+    );
+
+
 }

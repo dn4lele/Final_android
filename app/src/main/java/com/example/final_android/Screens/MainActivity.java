@@ -120,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 binding.progressBarAdvanture.setVisibility(View.GONE);
 
+                binding.searchMovies.setOnClickListener(v->{
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    intent.putExtra("search", binding.editTextText2.getText().toString());
+                    startActivity(intent);
+
+                });
+
             }
 
             @Override
