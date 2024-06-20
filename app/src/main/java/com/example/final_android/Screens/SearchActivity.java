@@ -53,6 +53,11 @@ public class SearchActivity extends AppCompatActivity {
         });
         selectedType= ViewType.OneColumn;
 
+
+        binding.backBtn.setOnClickListener(v -> {
+            finish();
+        });
+
         Intent intent = getIntent();
         String lastsearch = intent.getStringExtra("search");
         binding.searchBarMovies.setText(lastsearch);

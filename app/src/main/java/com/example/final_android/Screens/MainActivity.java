@@ -71,14 +71,7 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomMenu.setItemSelected(R.id.explorer , true);
 
 
-        binding.bottomMenu.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(int i) {
-                switch (i){
-                  //handle the bottom menu
-                }
-            }
-        });
+
 
 
         initBanners();
@@ -86,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         initAdventures();
 
         binding.searchMovies.setOnClickListener(searchMovie);
-
 
     }
 
@@ -98,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a movie name", Toast.LENGTH_SHORT).show();
             return;
         }
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        intent.putExtra("search", binding.editTextText2.getText().toString());
+        startActivity(intent);
     }
     private void initAdventures(){
         binding.progressBarAdvanture.setVisibility(View.VISIBLE);
@@ -120,12 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 binding.progressBarAdvanture.setVisibility(View.GONE);
 
-                binding.searchMovies.setOnClickListener(v->{
-                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                    intent.putExtra("search", binding.editTextText2.getText().toString());
-                    startActivity(intent);
-
-                });
 
             }
 
